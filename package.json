@@ -13,7 +13,6 @@
     "boom": "^3.2.2",
     "chairo": "^2.2.1",
     "hapi": "^14.2.0",
-    "hapi-auth-jwt2": "^7.0.1",
     "jasmine-node": "^1.14.5",
     "request": "^2.74.0",
     "seneca": "^2.1.0"
