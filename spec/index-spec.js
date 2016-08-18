@@ -87,14 +87,12 @@ describe('register()', () => {
 				type: 'http',
 				port: Config.AuthServer.senecaPort,
 				host: Config.AuthServer.host,
-				pin: Config.AuthServer.pins.login,
-				protocol: 'https'
+				pin: Config.AuthServer.pins.login
 		}).client({
 				type: 'http',
 				port: Config.AuthServer.senecaPort,
 				host: Config.AuthServer.host,
-				pin: Config.AuthServer.pins.validate,
-				protocol: 'https'
+				pin: Config.AuthServer.pins.validate
 		});
 
 		server.register({ register: AuthClient }, (err) => {
@@ -148,7 +146,7 @@ describe('register()', () => {
 			}, (err, response, body) => {
 				var body = JSON.parse(body);
 				var options = {
-					url: 'https://localhost:3000/restricted',
+					url: 'http://localhost:3000/restricted',
 					headers: {
 						'referencetoken': body.referenceToken
 					}
@@ -161,6 +159,7 @@ describe('register()', () => {
 					var decoded = jwt.verify(body.identityToken, Config.AuthServer.secret);
 					expect(decoded.id).toBe(1);
 					expect(decoded.username).toBe('jsmith');
+					
 					done();
 				});
 				
