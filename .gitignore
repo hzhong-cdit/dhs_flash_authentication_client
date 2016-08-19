@@ -11,6 +11,7 @@ pids
 logs
 results
 client-web/src/bower_components
+coverage
 node_modules
 npm-debug.log
 /.idea

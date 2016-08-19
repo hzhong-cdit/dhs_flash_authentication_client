@@ -207,3 +207,20 @@ describe('register()', () => {
 	});
 });
 
+describe('verify', () => {
+	it('will return a decoded token successfully', () => {
+		var expected = {
+			foo: 'bar'
+		};
+		var token = jwt.sign(expected, Config.AuthServer.secret);
+		var actual = AuthClient.verify(token);
+
+		expect(actual.foo).toBe(expected.foo);
+	});
+
+	it('will return an error', () => {
+		var token = jwt.sign({ foo: 'bar' }, 'invalid_secret');
+		var actual = AuthClient.verify(token);
+		expect(actual.name).toBe('JsonWebTokenError');
+	});
+});

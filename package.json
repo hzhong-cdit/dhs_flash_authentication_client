@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "jasmine-node spec",
+    "coverage": "istanbul cover ./node_modules/jasmine-node/bin/jasmine-node spec"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "jasmine-node": "^1.14.5",
     "request": "^2.74.0",
     "seneca": "^2.1.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.4"
   }
 }
