@@ -145,6 +145,9 @@ describe('register()', () => {
 				}
 			}, (err, response, body) => {
 				var body = JSON.parse(body);
+				console.log('-----------------------');
+				console.log('Reference Token: ', body.referenceToken);
+				console.log('-----------------------');
 				var options = {
 					url: 'http://localhost:3000/restricted',
 					headers: {
